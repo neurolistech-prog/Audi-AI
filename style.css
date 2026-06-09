@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#scroll-container {
+    width: 100%;
+}
+
+.panel {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- AUDI AI CORE (Généré en CSS pur) --- */
+.audi-hud {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+.hud-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.ring-outer {
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: transparent #00e5ff transparent #00e5ff;
+    animation: rotateClockwise 20s linear infinite;
+}
+
+.ring-mid {
+    width: 80%;
+    height: 80%;
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.4) transparent;
+    animation: rotateCounter 10s linear infinite;
+}
+
+.hud-core {
+    width: 55%;
+    height: 55%;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    border: 1px solid rgba(0, 229, 255, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+}
+
+.ai-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    color: #00e5ff;
+    text-shadow: 0 0 10px #00e5ff;
+}
+
+/* --- TEXT CONTENT --- */
+.content {
+    max-width: 500px;
+}
+
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+    color: #888;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.specs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.spec-item {
+    border-left: 2px solid #00e5ff;
+    padding-left: 1.5rem;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.spec-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.spec-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* --- ANIMATIONS CSS DE FOND --- */
+@keyframes rotateClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCounter {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
